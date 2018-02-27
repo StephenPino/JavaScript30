@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Reference VS Copy</title>
 </head>
+
 <body>
 
   <script>
     // start with strings, numbers and booleans
+    let age = 100;
+    let age2 = age;
+    age = 200;
+    console.log(age, age2);
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
@@ -38,9 +44,13 @@
 
     // with Objects
     const person = {
-      name: 'Wes Bos',
+      name: {
+        name2: 'WesBos'
+      },
       age: 80
     };
+
+    const newPerson = {...person};
 
     // and think we make a copy:
 
@@ -49,8 +59,8 @@
     // We will hopefully soon see the object ...spread
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
-
   </script>
 
 </body>
+
 </html>
